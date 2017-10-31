@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Harmobeer - Cadastro de Cerveja</title>
+			<style type="text/css">
+			body {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 20px;
+			}
+			.header {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 20px;
+			}
+			.title {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-weight:bold;
+				  font-size: 20px;
+			}
+			.bottom {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 20px;
+				  text-align: center;
+				  vertical-align: middle;
+				  color: #000000;
+			}
+		</style>
+</h:head>
+<body bgcolor="#DAA520">
+<form>
+<div>Cadastrar nova cerveja:</div>
+<br/>
+<h:outputText value="Nome:">
+		</h:outputText>
+		<h:inputText id="nome" value="#{cervejaBean.nomeCerveja}"
+			size="80" required="true">
+		</h:inputText>
+		<br />
+		<br />
+		<h:outputText value="Estilo:">
+		</h:outputText>
+		<h:inputText id="estilo" value="#{cervejaBean.estiloCerveja}"
+			size="80" required="true">
+		</h:inputText>
+		<br />
+		<br />
+		<h:outputText value="Teor Álcoolico:">
+		</h:outputText>
+		<h:inputText id="teor" value="#{cervejaBean.teorCerveja}"
+			size="80" required="true">
+		</h:inputText>
+		<br />
+		<br />
+		<h:commandButton action="" value="Cadastrar" />
+
+</form>
+</body>
+</html>

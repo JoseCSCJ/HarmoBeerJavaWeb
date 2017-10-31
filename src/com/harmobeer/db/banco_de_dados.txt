@@ -1,0 +1,71 @@
+create user harmobeer/harmobeer;
+
+grant connect, source to harmobeer;
+
+
+CREATE TABLE Usuario(
+id_user INTEGER NOT NULL,
+username VARCHAR2(20) NOT NULL,
+email VARCHAR2(50) NOT NULL,
+senha VARCHAR2(20) NOT NULL,
+privilegio char(1) NOT NULL,
+info VARCHAR2(200) NULL,
+CONSTRAINT check_privilegio CHECK (privilegio IN ('1','0')),
+CONSTRAINT pk_id_user PRIMARY KEY (ID_user));
+
+CREATE TABLE Cerveja(
+id_cerv INTEGER NOT NULL,
+nm_cerv VARCHAR2(60) NOT NULL,
+nm_estilo VARCHAR2(60) NOT NULL,
+teor_alcoolico NUMBER (6,2) NOT NULL,
+CONSTRAINT pk_id_cerv PRIMARY KEY (ID_cerv));
+
+CREATE TABLE Prato(
+id_prato INTEGER NOT NULL,
+nm_prato VARCHAR2(30) NOT NULL,
+CONSTRAINT pk_id_prato PRIMARY KEY (ID_prato));
+
+CREATE TABLE Harmonizacao(
+id_harmo INTEGER NOT NULL,
+id_cerv INTEGER NOT NULL,
+id_prato INTEGER NOT NULL,
+media NUMBER (5,2) NOT NULL,
+CONSTRAINT fk_id_cerv FOREIGN KEY (ID_cerv) REFERENCES Cerveja(ID_cerv),
+CONSTRAINT fk_id_prato FOREIGN KEY (ID_prato) REFERENCES Prato(ID_prato),
+CONSTRAINT pk_id_harmo PRIMARY KEY (ID_harmo));
+
+CREATE TABLE Avaliacao(
+id_aval INTEGER NOT NULL,
+id_harmo INTEGER NOT NULL,
+id_user INTEGER NOT NULL,
+nota INTEGER NOT NULL,
+comentario VARCHAR2(140) NOT NULL,
+CONSTRAINT fk_id_harmo FOREIGN KEY (ID_harmo) REFERENCES Harmonizacao(ID_harmo),
+CONSTRAINT fk_id_user FOREIGN KEY (ID_user) REFERENCES Usuario(ID_user),
+CONSTRAINT pk_ PRIMARY KEY (id_aval));
+
+CREATE SEQUENCE sequsuario;
+
+CREATE SEQUENCE seqcerv;
+
+CREATE SEQUENCE seqprato;
+
+CREATE SEQUENCE seqharmo;
+
+CREATE SEQUENCE seqaval;
+
+insert into cerveja(id_cerv, nm_cerv, nm_estilo, teor_alcoolico) values(seqcerv.nextval,'Maniba Black Metal IPA','American-Style Black Ale', 7.2);
+
+insert into cerveja(id_cerv, nm_cerv, nm_estilo, teor_alcoolico) values(seqcerv.nextval,'Seasons Holy Cow', 'Double India Pale Ale', 7.5);
+
+insert into usuario(id_user, username, email, senha, privilegio, info) values(sequsuario.nextval,'Jose', 'jose@harmobeer.com', 'jose123',1, 'Administrador');
+
+insert into usuario(id_user, username, email, senha, privilegio, info) values(sequsuario.nextval,'Luan', 'luan@harmobeer.com', 'luan123',1, 'Administrador');
+
+insert into usuario(id_user, username, email, senha, privilegio, info) values(sequsuario.nextval,'Anonimo', 'Anonimo@harmobeer.com', 'anonimo123',0, 'Senhor Anonimo');
+
+insert into usuario(id_user, username, email, senha, privilegio, info) values(sequsuario.nextval,'1', '1@harmobeer.com', '1',0, 'Aquele dos testes');
+
+commit;
+
+

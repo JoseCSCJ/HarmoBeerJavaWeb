@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Harmobeer - Main</title>
+			<style type="text/css">
+			body {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 20px;
+			}
+			.header {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 20px;
+			}
+			.title {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-weight:bold;
+				  font-size: 20px;
+			}
+			.bottom {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 20px;
+				  text-align: center;
+				  vertical-align: middle;
+				  color: #000000;
+			}
+		</style>
+</h:head>
+<body bgcolor="#DAA520">
+	<h:form>
+	<table width="100%" style="height:150px" align="left" cellpadding="5" cellspacing="0" border="0">
+							<tbody>
+								<tr>
+									<td align="left" width="50%" valign="top">
+										<span class="title"><h:outputText value = "#{harmoBeerBean.username}"/></span>
+										<ul>
+											<li><h:commandLink action="contato/CadastroContato" value="Editar Perfil"/></li>
+										</ul>
+										<ul>
+											<li><h:commandLink action="contato/CadastroContato" value="Buscar Cerveja"/></li>
+										</ul>
+										<ul>
+											<li><h:commandLink action="contato/CadastroContato" value="Buscar Prato"/></li>
+										</ul>
+										<ul>
+											<li><h:commandLink action="contato/CadastroContato" value="Buscar Usuario"/></li>
+										</ul>
+										<ul>
+											<li><h:commandLink action="contato/CadastroContato" value="Avaliacoes"/></li>
+										</ul>									
+									</td>
+									<td align="left" width="50%" valign="top">
+										<span class="title">Administrador</span>
+										<ul>
+											<li><h:commandLink action="contato/PesquisaContato" value="Administrar Cerveja"/></li>
+										</ul>
+										<ul>
+											<li><h:commandLink action="contato/PesquisaContato" value="Administrar Prato"/></li>
+										</ul>
+										<ul>
+											<li><h:commandLink action="contato/PesquisaContato" value="Administrar Usuarios"/></li>
+										</ul>									
+									</td>
+								</tr>
+							</tbody>
+						</table>
+	</h:form>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Harmobeer - Cadastro de usuário</title>
+			<style type="text/css">
+			body {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 20px;
+			}
+			.header {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 20px;
+			}
+			.title {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-weight:bold;
+				  font-size: 20px;
+			}
+			.bottom {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 20px;
+				  text-align: center;
+				  vertical-align: middle;
+				  color: #000000;
+			}
+		</style>
+</h:head>
+<body bgcolor="#DAA520">
+
+	<h:form>
+	<div>Insira suas informações para se cadastrar:</div>
+	<br/>
+	<img src="https://icon-icons.com/icons2/1130/PNG/512/useraddwithcircularbutton_80118.png"/>
+	<br/>
+		<h:outputText value="Nome:">
+		</h:outputText>
+		<h:inputText id="nome" value="#{usuarioBean.nomeUsuario}"
+			size="80" required="true">
+		</h:inputText>
+		<br />
+		<br />
+		<h:outputText value="Email:">
+		</h:outputText>
+		<h:inputText id="email" value="#{usuarioBean.emailUsuario}"
+			size="80" required="true">
+		</h:inputText>
+		<br />
+		<br />
+		<h:outputText value="Senha:">
+		</h:outputText>
+		<h:inputSecret id="senha" value="#{usuarioBean.senhaUsuario}"
+			size="80" required="true">
+		</h:inputSecret>
+		<br />
+		<h:outputText value="Confirme a senha:">
+		</h:outputText>
+		<h:inputSecret id="senhaconf" value="#{usuarioBean.senhaUsuario}"
+			size="80" required="true">
+		</h:inputSecret>
+		<br />
+		<br />
+		<h:commandButton action="" value="Cadastrar" />
+	</h:form>
+
+</body>
+</html>
